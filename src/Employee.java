@@ -26,18 +26,23 @@ public class Employee {
     public int getId() {
         return id;
     }
+
     public String getLastName() {
         return lastName;
     }
+
     public String getFirstName() {
         return firstName;
     }
+
     public String getMiddleName() {
         return middleName;
     }
+
     public int getDepartment() {
         return department;
     }
+
     public int getSalary() {
         return salary;
     }
@@ -45,15 +50,19 @@ public class Employee {
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
+
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
     public void setMiddleName(String middleName) {
         this.middleName = middleName;
     }
+
     public void setDepartment(int department) {
         this.department = department;
     }
+
     public void setSalary(int salary) {
         this.salary = salary;
     }
@@ -77,7 +86,7 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Работник номер " + id +
+        return "Работник ID №" + id +
                 ", ФИО: " + lastName + " " + firstName + " " + middleName +
                 ", отдел: " + department +
                 ", зарплата: " + salary + ".\n";

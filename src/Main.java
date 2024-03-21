@@ -21,13 +21,14 @@ public class Main {
         book.getLastNames();
         System.out.println();
 
-        // Индексируем зарплату всех сотрудников на случайную величину от 10 до 30
+        // Индексируем зарплату всех сотрудников на введенное значение
         book.indexSalary();
 
         // Информация о работниках после индексации зарплаты
         System.out.println(
-                "Список всех работников и вся информация о них: \n" + book.getEmployeesList());
+                "Изменения после индексации зарплаты: \n" + book.getEmployeesList());
 
+        // Изменения и общая информация по указанному отделу
         System.out.print("Введите номер отдела для подробной информации по нему: ");
         int department = scan.nextInt();
         Employee departmentMinSalary = book.getEmpWithMinSalaryInSomeDepartment(department);
@@ -42,8 +43,10 @@ public class Main {
                 departmentMaxSalary.getSalary() + " рублей.");
         System.out.printf("Средняя зарплата по отделу №%d составляет %.2f рублей.\n", department,
                 book.getAvgSalaryInSomeDepartment(department));
+        // индексируем зарплату сотрудников указанного отдела
         book.indexSalaryInSomeDepartment(department);
         book.printEmpInSomeDepartment(department);
+        System.out.println();
 
         // Фильтруем сотрудников по зарплате
         book.printEmpWithSalaryLessThen();
@@ -52,14 +55,16 @@ public class Main {
         // Удаляем сотрудников
         book.deleteEmployee();
         book.deleteEmployee();
+
         // Выведем для проверки все фамилии
         book.getLastNames();
         System.out.println();
+
         // Внесем нового сотрудника. Или несколько.
         book.setNewEmployee();
         book.setNewEmployee();
-        System.out.println(
-                "Список всех работников и вся информация о них: \n" + book.getEmployeesList());
+        System.out.println("Список всех работников и вся информация о них: \n" + book.getEmployeesList());
+
         // ищем сотрудника по ID
         book.searchEmployeeByID();
     }

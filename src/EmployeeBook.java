@@ -92,7 +92,7 @@ public class EmployeeBook {
                 counter++;
             }
         }
-        return (double) getTotalSalary() / counter;
+        return (double) getTotalSalary() / counter; // делю на counter, т.к. если мы удалим из массива работников
     }
 
     /**
@@ -261,7 +261,7 @@ public class EmployeeBook {
      * Удаление сотрудника по введенному id
      */
     void deleteEmployee() {
-        System.out.println("Введите id объекта для удаления: ");
+        System.out.print("Введите id объекта для удаления: ");
         int id = scan.nextInt();
         for (int i = 0; i < employeesArray.length; i++) {
             if (employeesArray[i] != null && employeesArray[i].getId() == id) {
@@ -277,18 +277,19 @@ public class EmployeeBook {
      * Добавляем нового сотрудника, если есть место в массиве
      */
     void setNewEmployee() {
+        System.out.println("Раз уж вы вызвали этот метод, значит вы хотите добавить сотрудника.");
         for (int i = 0; i < employeesArray.length; i++) {
             if (employeesArray[i] == null) {
                 employeesArray[i] = new Employee();
-                System.out.println("Введите фамилию работника: ");
+                System.out.print("Введите фамилию работника: ");
                 employeesArray[i].setLastName(scan.next());
-                System.out.println("Введите имя работника: ");
+                System.out.print("Введите имя работника: ");
                 employeesArray[i].setFirstName(scan.next());
-                System.out.println("Введите отчество работника: ");
+                System.out.print("Введите отчество работника: ");
                 employeesArray[i].setMiddleName(scan.next());
-                System.out.println("Введите его номер отдела: ");
+                System.out.print("Введите его номер отдела: ");
                 employeesArray[i].setDepartment(scan.nextInt());
-                System.out.println("Введите его будущую зарплату: ");
+                System.out.print("Введите его будущую зарплату: ");
                 employeesArray[i].setSalary(scan.nextInt());
                 return;
             }

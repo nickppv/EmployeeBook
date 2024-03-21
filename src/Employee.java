@@ -10,9 +10,12 @@ public class Employee {
 
     static public int idCounter = 1;
 
+    public Employee() {
+        this.id = idCounter++;
+    }
+
     public Employee(String lastName, String firstName, String middleName, int department, int salary) {
-        this.id = idCounter;
-        idCounter++;
+        this.id = idCounter++;
         this.lastName = lastName;
         this.firstName = firstName;
         this.middleName = middleName;
